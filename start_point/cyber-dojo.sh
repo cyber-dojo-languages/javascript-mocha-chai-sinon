@@ -5,7 +5,12 @@
 #
 # set the version to use:
 #NODE_VERSION=0.12.7
-NODE_VERSION=4.2.1
+#NODE_VERSION=4.1.1
+#NODE_VERSION=4.2.1
+#NODE_VERSION=6.11.1
+#NODE_VERSION=8.2.1
+NODE_VERSION=8.4.0
+
 #
 # Use npm package 'n' to call mocha with selected node version:
 if [ -f .jshintrc ]
