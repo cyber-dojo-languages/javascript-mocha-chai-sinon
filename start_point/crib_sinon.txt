@@ -9,42 +9,42 @@ function hello(name, cb) {
   cb('hello ' + name);
 }
 
-describe('hello with callback', function () {
+describe('hello with callback', function() {
   var cb;
 
   //arrange and act here
-  beforeEach(function () {
+  beforeEach(function() {
     cb = sinon.spy();
     hello('foo', cb);
   });
 
   it('assert call callback with correct greeting with ' +
     'sinon + chai assert',
-    function () {
+    function() {
       assert(cb.calledWith('hello foo'));
     });
 
   it('should call callback with correct greeting with ' +
     'sinon + chai expect',
-    function () {
+    function() {
       expect(cb.calledWith('hello foo')).to.be.ok;
     });
 
   it('should call callback with correct greeting with ' +
     'sinon + chai should',
-    function () {
+    function() {
       cb.calledWith('hello foo').should.be.ok;
     });
 
   it('expect call callback with correct greeting with ' +
     'chai expect + sinon + sinon-chai',
-    function () {
+    function() {
       expect(cb).to.have.been.calledWith('hello foo');
     });
 
   it('should call callback with correct greeting with ' +
     'chai should + sinon + sinon-chai',
-    function () {
+    function() {
       cb.should.have.been.calledWith('hello foo');
     });
 });

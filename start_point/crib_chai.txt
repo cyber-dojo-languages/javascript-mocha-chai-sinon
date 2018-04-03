@@ -4,7 +4,7 @@
 // This is a TEXT file giving examples of chai tests.
 //----------------------------------------------------
 
-var the = require('./hiker.js');
+const the = require('./hiker.js');
 
 describe('Assert Style: Answer', function () {
   it('to life the universe and everything', function () {
