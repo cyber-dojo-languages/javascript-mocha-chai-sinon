@@ -1,9 +1,9 @@
 'use strict';
 
-const answer = require('./hiker.js');
+const hiker = require('./hiker.js');
 
-describe('Should Style: Answer', function() {
-  it('to life the universe and everything', function() {
-    answer().should.equal(42);
+describe('Should Style: Answer', () => {
+  it('to life the universe and everything', () => {
+    hiker.answer().should.equal(42);
   });
 });
