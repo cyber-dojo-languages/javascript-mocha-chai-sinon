@@ -1,4 +1,3 @@
-
 [![CircleCI](https://circleci.com/gh/cyber-dojo-languages/javascript-mocha-chai-sinon.svg?style=svg)](https://circleci.com/gh/cyber-dojo-languages/javascript-mocha-chai-sinon)
 
 ## display_name="Javascript, Mocha+chai+sinon"
