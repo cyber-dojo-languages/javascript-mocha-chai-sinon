@@ -3,5 +3,4 @@ LABEL maintainer=jon@jaggersoft.com
 
 RUN npm install -global mocha chai sinon sinon-chai
 
-
 COPY red_amber_green.rb /usr/local/bin
