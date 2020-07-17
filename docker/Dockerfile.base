@@ -1,7 +1,7 @@
-FROM cyberdojofoundation/javascript-node:688a241
+FROM cyberdojofoundation/javascript-node:6d169e9
 LABEL maintainer=jon@jaggersoft.com
 
 RUN npm install -global mocha chai sinon sinon-chai
-ENV NODE_PATH /usr/local/lib/node_modules
+
 
 COPY red_amber_green.rb /usr/local/bin
