@@ -1,12 +1,27 @@
-#!/bin/bash -Eeu
+#!/usr/bin/env bash
+set -Eeu
+
 readonly MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly REGEX="image_name\": \"(.*)\""
 readonly JSON=`cat ${MY_DIR}/docker/image_name.json`
 [[ ${JSON} =~ ${REGEX} ]]
 readonly IMAGE_NAME="${BASH_REMATCH[1]}"
 
-readonly EXPECTED=11.1.0 # mocha version
-readonly ACTUAL=$(docker run --rm -i ${IMAGE_NAME} sh -c 'npx mocha --version')
+function echo_package_version()
+{
+  local -r name="${1}"
+  local -r pattern=" ${name}@"
+  local -r command="npm list | grep -E '${pattern}'"
+  echo ${command}
+  docker run --rm -i ${IMAGE_NAME} sh -c "${command}"
+}
+
+readonly EXPECTED=11.7.5
+readonly ACTUAL="$(echo_package_version mocha)"
+
+#echo_package_version chai
+#echo_package_version sinon
+#echo_package_version sinon-chai
 
 if echo "${ACTUAL}" | grep -q "${EXPECTED}"; then
   echo "VERSION CONFIRMED as ${EXPECTED}"
