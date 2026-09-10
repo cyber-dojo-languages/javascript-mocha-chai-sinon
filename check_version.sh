@@ -15,7 +15,7 @@ function echo_package_version()
   docker run --rm -i ${IMAGE_NAME} sh -c "${command}"
 }
 
-readonly EXPECTED=11.7.5
+readonly EXPECTED=11.7
 readonly ACTUAL="$(echo_package_version mocha)"
 
 #echo_package_version chai
